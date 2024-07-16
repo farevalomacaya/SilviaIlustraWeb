@@ -144,7 +144,7 @@ formularioClave.addEventListener('submit', (event) => {
   
     const claveIngresada = document.getElementById('clave').value;
   
-    if (claveIngresada === '1761Soto') {
+    if (claveIngresada === 'contraseña123') {
       // Clave correcta, redirigir a la página de pedidos
       window.location.href = '/intranet.html';
     } else {
