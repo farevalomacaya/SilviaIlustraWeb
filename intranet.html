@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silvia Ilustra</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="bg-light">
+    <header class="container-fluid p-3 bg-warning text-black text-center">
+        <h1>Registro de Pedidos - SilviaIlustra</h1>
+        <button><a href="index.html">Regresar</a></button>
+    </header>
+    <main class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-4">
+                <form action="" class="card">
+                    <div class="card-header">
+                        <h5>Ingresa datos del pedido</h5>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <label>Nombre del Cliente</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" onblur="verificar(this.id)">
+                            <div id="e-nombre"></div>
+                        </div>
+                        <div>
+                            <label>Apellido del Cliente</label>
+                            <input type="text" class="form-control" id="apellido" name="apellido" onblur="verificar(this.id)">
+                            <div id="e-apellido"></div>
+                        </div>
+                        <div>
+                            <label>Run del cliente</label>
+                            <input type="text" class="form-control" id="run" name="run" onblur="verificar(this.id)">
+                            <div id="e-run"></div>
+                        </div>
+
+                        <div>
+                            <label>Teléfono de contacto</label>
+                            <input type="text" placeholder="Ejemplo: 9xxxxxxxx" class="form-control" id="fono" name="fono" class="form-control" maxlength="9" onkeypress="return soloNumeros(event)" onblur="verificar(this.id)">
+                            <div id="e-fono"></div>
+                        </div>
+                        <div>
+                            <label>Correo Electrónico</label>
+                            <input type="text" class="form-control" id="mail" name="mail" onblur="verificar(this.id)">
+                            <div id="e-mail"></div>
+                        </div>
+                        <div>
+                            <label>Tipo de Producto</label>
+                            <select name="producto" id="producto" class="form-select" onblur="verificar(this.id)">
+                                <option value="" disabled selected>Seleccione el producto del pedido</option>
+                                <option value="Ilustracion acuarela">Ilustración en acuarela</option>
+                                <option value="Ilustracion digital">Ilustración Digital</option>
+                                <option value="Marcapagina">Marcapágina en acuarela</option>
+                                <option value="Arbol de Huellas">Árbol de huellas en acuarela</option>
+                                <option value="Taller grupal">Taller Grupal de acuarela</option>
+                                <option value="Clase personalizada">Clase personalizada de acuarela</option>
+                            </select>    
+                            <div id="e-producto"></div>
+                        </div>
+                        <div>
+                            <label>Detalles del Pedido</label>
+                            <textarea  name="detalles" id="detalles" cols="30" rows="3" class="form-control"></textarea>
+                            <div id="e-detalles"></div>
+                        </div>
+                        <div>
+                            <label>Fecha Entrega</label>
+                            <input type="date" class="form-control" id="fecha" name="fecha" onblur="verificar(this.id)">
+                            <div id="e-fecha"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <input type="reset" value="Limpiar" class="btn btn-info" onclick="limpiar()">
+                        <input type="button" id="btnGuardar" value="Guardar" class="btn btn-success">
+                    </div> 
+                </form>
+            </div>
+            <div class="col-8">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Run</th>
+                                <th>Telefono</th>
+                                <th>Mail</th>
+                                <th>Producto</th>
+                                <th>Detalles</th>
+                                <th>Fecha Entrega</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenido">
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/js/sweetalert2.min.js"></script>
+    <script src="utilidades.js"></script>
+    <script src="funciones.js" type="module"></script>
+</body>
+
+</html>
